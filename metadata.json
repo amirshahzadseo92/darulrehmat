@@ -1,0 +1,6 @@
+{
+  "name": "Dar ul Rehmat",
+  "description": "Global Islamic Center app providing Islamic services, wazaif, articles, and consultation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
