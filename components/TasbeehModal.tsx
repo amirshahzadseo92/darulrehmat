@@ -16,7 +16,6 @@ const DHIKR_LIST = [
   { ur: "Astaghfirullah", key: "astaghfirullah" }
 ];
 
-const TARGETS = [33, 99, 100, 1000];
 const CIRC = 2 * Math.PI * 116; // ~728.85
 
 export default function TasbeehModal({ isOpen, onClose }: TasbeehModalProps) {
@@ -291,33 +290,7 @@ export default function TasbeehModal({ isOpen, onClose }: TasbeehModalProps) {
           </button>
         </div>
 
-        {/* Tap Hint */}
-        <p className="text-center text-[11px] sm:text-xs text-[#6B5B45] mb-3 tracking-wide">
-          Tap the circle or press space bar
-        </p>
 
-        {/* Target Row Chips */}
-        <div className="flex gap-1.5 sm:gap-2 justify-center mb-4 flex-wrap">
-          {TARGETS.map((t) => {
-            const isActive = t === target;
-            return (
-              <button
-                key={t}
-                onClick={() => {
-                  setTarget(t);
-                  saveState(lifetime, today, t, dhikrIndex);
-                }}
-                className={`text-xs font-medium px-3 sm:px-3.5 py-1 rounded-lg border transition-all duration-200 cursor-pointer ${
-                  isActive
-                    ? 'bg-[#C9A227] border-[#C9A227] text-[#073531] font-semibold shadow-xs'
-                    : 'bg-transparent border-[#E4D9B8] text-[#6B5B45] hover:bg-[#F2E7CB]/50'
-                }`}
-              >
-                {t}
-              </button>
-            );
-          })}
-        </div>
 
 
 
