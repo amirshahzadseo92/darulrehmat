@@ -1,24 +1,18 @@
-# Cloudflare Pages Deployment Guide (Via GitHub)
+# Cloudflare Pages / Workers Deployment Settings
 
-Is project ko **GitHub** ke zariye **Cloudflare Pages** par deploy karne ke liye ye settings use karein:
+In your Cloudflare Dashboard for **darulrehmat**, update the build settings as follows:
 
-## 1. Cloudflare Pages Dashboard Settings
+## Cloudflare Dashboard Settings
 
-When creating a new Cloudflare Pages project from your GitHub repository:
+Go to **Workers & Pages** -> **darulrehmat** -> **Settings** -> **Build & deployments**:
 
-- **Framework preset**: `Next.js (Static Export)` ya `None`
-- **Build command**: `npm run build`
-- **Build output directory**: `out`
-- **Root directory**: `/` (leave empty or `/`)
+1. **Build command**: `npm run build`
+2. **Build output directory**: `out`
+3. **Framework preset**: `Next.js (Static Export)` or `None`
 
-## 2. Environment Variables (Environment Variables in Cloudflare)
+---
 
-Cloudflare Pages settings me **Environment Variables** section me ye add kar sakte hain (optional):
+## Why the build failed in the screenshot
+In your Cloudflare dashboard, the **Build command** was set to `None`, so Cloudflare tried to deploy using `npx wrangler deploy` before Next.js compiled the site into the `out` folder.
 
-- `NODE_VERSION`: `20`
-
-## 3. Deployment Summary
-
-- Project configured for Next.js **Static Export** (`output: 'export'`)
-- Image Optimization configured as `unoptimized: true` for zero-error static hosting.
-- `.node-version` file included to enforce Node 20 runtime on Cloudflare build servers.
+Setting **Build command** to `npm run build` fixes this issue completely!
