@@ -195,27 +195,30 @@ export default function Home() {
             className="relative flex items-center justify-center cursor-pointer group w-14 h-14 sm:w-[60px] sm:h-[60px] transition-transform duration-300 hover:scale-105"
             title="Click to view full logo"
           >
-            {/* Outer Rotating Layer - Logo's built-in green dashed ring rotates */}
+            {/* Stationary Logo Image */}
             <Image 
               src={logoSrc} 
-              alt="Dar ul Rehmat Logo Ring" 
+              alt="Dar ul Rehmat Logo" 
               width={120}
               height={120}
               unoptimized
-              className="w-full h-full object-cover rounded-full animate-[spin_14s_linear_infinite]" 
+              className="w-full h-full object-cover rounded-full" 
             />
-            {/* Inner Stationary Layer - Central green dome and calligraphy stay upright */}
-            <div className="absolute inset-0 z-10 overflow-hidden rounded-full flex items-center justify-center">
-              <Image 
-                src={logoSrc} 
-                alt="Dar ul Rehmat Logo Dome" 
-                width={120}
-                height={120}
-                unoptimized
-                className="w-full h-full object-cover" 
-                style={{ clipPath: 'circle(39.5% at 50% 50%)' }}
+            {/* Rotating Black Ring Overlay */}
+            <svg 
+              className="absolute inset-0 w-full h-full animate-[spin_12s_linear_infinite] pointer-events-none z-10" 
+              viewBox="0 0 100 100"
+            >
+              <circle 
+                cx="50" 
+                cy="50" 
+                r="47.5" 
+                fill="none" 
+                stroke="#000000" 
+                strokeWidth="2.5" 
+                strokeDasharray="6 4" 
               />
-            </div>
+            </svg>
           </div>
           <div className="flex flex-col">
             <h1 
@@ -844,27 +847,30 @@ export default function Home() {
               {/* Rotating ring logo preview */}
               <div className="flex items-center justify-center py-2">
                 <div className="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24">
-                  {/* Outer Rotating Layer */}
+                  {/* Stationary Logo Image */}
                   <Image 
                     src={logoSrc} 
-                    alt="Logo Preview Ring" 
+                    alt="Logo Preview" 
                     width={100}
                     height={100}
                     unoptimized
-                    className="w-full h-full object-cover rounded-full animate-[spin_14s_linear_infinite]" 
+                    className="w-full h-full object-cover rounded-full" 
                   />
-                  {/* Inner Stationary Layer */}
-                  <div className="absolute inset-0 z-10 overflow-hidden rounded-full flex items-center justify-center">
-                    <Image 
-                      src={logoSrc} 
-                      alt="Logo Preview Dome" 
-                      width={100}
-                      height={100}
-                      unoptimized
-                      className="w-full h-full object-cover" 
-                      style={{ clipPath: 'circle(39.5% at 50% 50%)' }}
+                  {/* Rotating Black Ring Overlay */}
+                  <svg 
+                    className="absolute inset-0 w-full h-full animate-[spin_12s_linear_infinite] pointer-events-none z-10" 
+                    viewBox="0 0 100 100"
+                  >
+                    <circle 
+                      cx="50" 
+                      cy="50" 
+                      r="47.5" 
+                      fill="none" 
+                      stroke="#000000" 
+                      strokeWidth="2.5" 
+                      strokeDasharray="6 4" 
                     />
-                  </div>
+                  </svg>
                 </div>
               </div>
 
