@@ -592,15 +592,30 @@ export default function Home() {
               <div className="mt-3 sm:mt-4 bg-white rounded-2xl border border-emerald-100/80 shadow-xs p-6 sm:p-8 text-center flex flex-col items-center justify-center w-full" id="profile-card">
                 <div className="w-28 h-28 sm:w-36 sm:h-36 relative flex items-center justify-center mb-4 group">
                   {/* Profile Picture */}
-                  <div className="w-full h-full rounded-full bg-white border-4 border-emerald-100 shadow-md overflow-hidden relative z-0 flex items-center justify-center">
+                  <div className="w-full h-full rounded-full bg-white shadow-md relative z-0 flex items-center justify-center">
                     <Image 
                       src={profileSrc} 
                       alt="Hafiz Amir Shahzad Saifi" 
                       width={300}
                       height={300}
                       unoptimized
-                      className="w-full h-full object-cover object-center rounded-full transition-transform duration-300 group-hover:scale-105" 
+                      className="w-[88%] h-[88%] object-cover object-center rounded-full transition-transform duration-300 group-hover:scale-105" 
                     />
+                    {/* Rotating Black Ring Overlay */}
+                    <svg 
+                      className="absolute inset-0 w-full h-full animate-[spin_12s_linear_infinite] pointer-events-none z-10" 
+                      viewBox="0 0 100 100"
+                    >
+                      <circle 
+                        cx="50" 
+                        cy="50" 
+                        r="48" 
+                        fill="none" 
+                        stroke="#000000" 
+                        strokeWidth="2.5" 
+                        strokeDasharray="6 4" 
+                      />
+                    </svg>
                   </div>
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-emerald-950 tracking-tight" id="profile-name">
@@ -905,15 +920,30 @@ export default function Home() {
               </h4>
 
               <div className="flex items-center justify-center py-2">
-                <div className="w-20 h-20 rounded-full border-2 border-emerald-600 overflow-hidden shadow-xs">
+                <div className="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24">
                   <Image 
                     src={profileSrc} 
                     alt="Profile Preview" 
                     width={100}
                     height={100}
                     unoptimized
-                    className="w-full h-full object-cover" 
+                    className="w-[88%] h-[88%] object-cover rounded-full" 
                   />
+                  {/* Rotating Black Ring Overlay */}
+                  <svg 
+                    className="absolute inset-0 w-full h-full animate-[spin_12s_linear_infinite] pointer-events-none z-10" 
+                    viewBox="0 0 100 100"
+                  >
+                    <circle 
+                      cx="50" 
+                      cy="50" 
+                      r="48" 
+                      fill="none" 
+                      stroke="#000000" 
+                      strokeWidth="2.5" 
+                      strokeDasharray="6 4" 
+                    />
+                  </svg>
                 </div>
               </div>
 
